@@ -57,10 +57,9 @@ const AlbumComponent = () => {
       {!albums && <Loading />}
       <Row xs={1} md={2} lg={3} className="g-4">
         {albums?.map((album) => {
-          console.log(album.id === selectedAlbum)
           return (
             <Col key={album.id}>
-              <Card onClick={() => handleAlbumClick(album.id)} className="cursor-pointer album-card">
+              <Card onClick={() => handleAlbumClick(`${album.id}`)} className="cursor-pointer album-card">
                 <Card.Body>
                   <Card.Title>{album.title}</Card.Title>
                 </Card.Body>

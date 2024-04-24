@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from 'react';
-import cn from 'classnames';
 import { useRouter } from 'next/router';
 import Image from 'next/image'
 import _ from 'lodash';
@@ -17,7 +16,7 @@ import Textarea from '../input/typing/Textarea';
 type FormComment = Comment;
 
 export default function PostDetailComponent() {
-  const [postDetail, setPostDetail] = useState<Posts | {}>({})
+  const [postDetail, setPostDetail] = useState<Posts[] | null>(null)
   const [comments, setComments] = useState<Comment[]>([])
   const router = useRouter()
   const { id } = router.query
@@ -26,7 +25,7 @@ export default function PostDetailComponent() {
     const listPosts = async () => {
       try {
         const res = await fetchDetailPost(`${id}`)
-        setPostDetail(res.data)
+        setPostDetail(res?.data)
       } catch (error) {
         console.error('Error:', error)
       }
@@ -53,7 +52,7 @@ export default function PostDetailComponent() {
     const newComment = {
       userId: 1,
       id: comments.length + 1,
-      postId: postDetail.id,
+      postId: postDetail?.id,
       email: '',
       name: 'Current User Test',
       body: formData.body
@@ -70,8 +69,8 @@ export default function PostDetailComponent() {
           <>
             <div className='mt-4 mb-4'>
               <div className='post-card'>
-                <h2>{postDetail.title}</h2>
-                <p>{postDetail.body}</p>
+                <h2>{postDetail?.title}</h2>
+                <p>{postDetail?.body}</p>
               </div>
             </div>
             <div className="">
