@@ -1,0 +1,44 @@
+@import '~/assets/styles/main/custom-variables';
+
+.sidebarToggle {
+  box-sizing: border-box;
+  background: $sidebar-toggle-bg-color;
+  box-shadow: 0.001px 4px 10px rgb(0 0 0 / 10%);
+  border-radius: 20px;
+  border: 1px solid $sidebar-toggle-border-color;
+  transition: 0.5s ease-in-out;
+  color: $sidebar-toggle-icon-color;
+}
+
+.childrenWrapper {
+  transition: 0.5s ease-in-out;
+}
+
+.sidebarWrapper {
+  border-right: 2px solid $border-color;
+  transition: max-width 0.5s ease-in-out;
+}
+
+.sidebarOption {
+  transition: background-color 0.3s ease-in-out;
+
+  &:hover {
+    background-color: $sidebar-bg-active;
+
+    li {
+      color: var(--basic-color);
+    }
+  }
+}
+
+.rotateIcon {
+  transform: rotate(180deg);
+  transition: transform 0.5s ease;
+}
+
+.unRotateIcon {
+  transform: rotate(0);
+  transition: transform 0.5s ease;
+}
+
+

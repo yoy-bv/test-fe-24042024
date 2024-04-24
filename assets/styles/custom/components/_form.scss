@@ -1,0 +1,162 @@
+@import '~/assets/styles/main/custom-variables';
+@import '~/assets/styles/base/mixins';
+
+.form-label {
+  color: $color-text-0;
+  font-size: 1rem;
+  font-weight: $font-weight-bold;
+  line-height: 1.6;
+  margin-bottom: 3px;
+
+  &.required::after {
+    content: "*";
+    color: $color-status-error;
+    margin-left: 2px;
+  }
+}
+
+.form-control {
+  position: relative;
+  z-index: $z-index-form;
+  border: 1px solid $color-text-2;
+  width: 100%;
+  padding: 0.438rem 1.125rem;
+  font-weight: $font-weight-normal;
+  color: $color-text-0;
+}
+
+.form-request {
+  color: $color-text-0;
+}
+
+.file-input {
+  width: 295px;
+
+  &__input {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+  }
+
+  &__label {
+    cursor: pointer;
+    font-weight: $font-weight-bold;
+    @include flexbox;
+    @include align-items(center);
+    @include justify-content(center);
+
+    .btn-icon {
+      font-size: 1rem;
+      margin-left: 9px;
+    }
+  }
+}
+
+.description-form {
+  color: $color-text-0;
+  font-size: 1.25rem;
+  font-weight: $font-weight-bold;
+}
+
+.form-group {
+  margin-bottom: 16px;
+
+  &.no-label {
+    padding-top: 28px;
+  }
+}
+
+.groups-inline {
+  .form-col {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+}
+
+.footer-form {
+  border-top: 1px solid $gray-300;
+  padding-top: 20px;
+}
+
+.btn-submit-form {
+  min-width: 120px;
+}
+
+.form-field {
+  &.invalid {
+    border-color: $red;
+  }
+
+  &~.postfix {
+    position: absolute;
+    top: 12px;
+    right: 20px;
+    pointer-events: none;
+  }
+
+  &~.prefix {
+    position: absolute;
+    top: 12px;
+    left: 20px;
+    pointer-events: none;
+  }
+
+  &~.error-msg {
+    font-size: 0.75rem;
+    color: $red;
+    margin-bottom: 0;
+    margin-top: 0.25rem;
+  }
+}
+
+.form-control-select {
+  border: 0;
+  border-radius: $input-border-radius-custom;
+  font-size: 0.875rem;
+  background-color: $white;
+
+  .hook-select {
+    &__control {
+      background-color: transparent;
+
+      &--is-disabled {
+        background-color: $input-disabled-bg;
+      }
+
+      &:hover,
+      &:focus,
+      &--menu-is-open,
+      &--is-focused {
+        box-shadow: none;
+        outline: 0;
+      }
+    }
+
+    &__indicators {
+      height: 36px;
+    }
+  }
+
+  .hook-select__menu {
+    z-index: $z-index-select-box;
+  }
+
+  &.invalid {
+    border: 1px solid $danger;
+
+    .hook-select__control {
+      border: none;
+    }
+  }
+
+  &~.error-msg {
+    font-size: 0.75rem;
+    color: $red;
+    margin-bottom: 0;
+    margin-top: 0.25rem;
+  }
+}

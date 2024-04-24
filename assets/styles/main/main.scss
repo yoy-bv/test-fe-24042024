@@ -1,0 +1,31 @@
+@import '~/assets/styles/fonts/fonts';
+
+@import '~bootstrap/scss/functions';
+@import '~bootstrap/scss/variables';
+@import '~bootstrap/scss/mixins';
+@import '~/assets/styles/base/mixins';
+@import 'root';
+@import 'custom-variables';
+@import 'variables';
+@import '~bootstrap/scss/bootstrap';
+@import 'react-toastify/dist/ReactToastify.css';
+@import '~flatpickr/dist/flatpickr.css';
+@import 'react-complex-tree/lib/style.css';
+
+@import '~/assets/styles/common/reboot';
+
+@import '~/assets/styles/fonts/fonts-icon';
+
+@import '~/assets/styles/custom/components/datepicker';
+@import '~/assets/styles/common/basic-color';
+@import '~/assets/styles/common/react-complex-tree';
+@import '~/assets/styles/custom/components/form';
+@import '~/assets/styles/custom/components/button';
+@import '~/assets/styles/custom/components/pagination';
+@import '~/assets/styles/layout/asidebar';
+@import '~/assets/styles/main/common';
+
+@import '~/assets/styles/main/header';
+
+@import '~/assets/styles/pages/posts';
+@import '~/assets/styles/pages/albums';

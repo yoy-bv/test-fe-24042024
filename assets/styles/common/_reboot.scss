@@ -1,0 +1,321 @@
+// reboot.scss
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: none !important;
+}
+
+// a
+
+a {
+  text-decoration: none !important;
+
+  &:focus {
+    outline: none;
+  }
+
+  &:hover {
+    color: var(--basic-color);
+  }
+}
+
+// ul
+ul.list-style-type-none {
+  list-style-type: none;
+}
+
+// Forms
+label {
+  font-weight: $font-weight-semibold;
+}
+
+// Buttons
+button:focus {
+  outline: none;
+}
+
+// blockquote
+
+.blockquote {
+  padding: 10px 20px;
+  margin-bottom: 20px;
+  border-left: 4px solid $gray-200;
+
+  &.blockquote-reverse {
+    border-left: 0;
+    border-right: 4px solid $gray-200;
+    text-align: right;
+  }
+}
+
+// Icons
+.icon-dual {
+  color: $gray-600;
+  fill: rgba($gray-600, 0.12);
+}
+
+@each $color, $value in $theme-colors {
+  .icon-dual-#{$color} {
+    color: $value;
+    fill: rgba($value, 0.16);
+  }
+}
+
+.icon-xs {
+  height: 16px;
+  width: 16px;
+}
+
+.icon-lg {
+  height: 32px;
+  width: 32px;
+}
+
+.icon-xl {
+  height: 48px;
+  width: 48px;
+}
+
+.icon-xxl {
+  height: 72px;
+  width: 72px;
+}
+
+// Padding, Margin
+@for $i from 1 through 1000 {
+  //margin
+  .mr-#{$i}px {
+    margin-right: #{$i}px;
+  }
+  .ml-#{$i}px {
+    margin-left: #{$i}px;
+  }
+  .mt-#{$i}px {
+    margin-top: #{$i}px;
+  }
+  .mb-#{$i}px {
+    margin-bottom: #{$i}px;
+  }
+  .mx-#{$i}px {
+    margin-right: #{$i}px;
+    margin-left: #{$i}px;
+  }
+  .my-#{$i}px {
+    margin-top: #{$i}px;
+    margin-bottom: #{$i}px;
+  }
+  .m-#{$i}px {
+    margin: #{$i}px;
+  }
+  //padding
+  .pr-#{$i}px {
+    margin-right: #{$i}px;
+  }
+  .pl-#{$i}px {
+    padding-left: #{$i}px;
+  }
+  .pt-#{$i}px {
+    padding-top: #{$i}px;
+  }
+  .pb-#{$i}px {
+    padding-bottom: #{$i}px;
+  }
+  .px-#{$i}px {
+    padding-right: #{$i}px;
+    padding-left: #{$i}px;
+  }
+  .py-#{$i}px {
+    padding-top: #{$i}px;
+    padding-bottom: #{$i}px;
+  }
+  .p-#{$i}px {
+    padding: #{$i}px;
+  }
+  //gap
+  .gap-#{$i}px {
+    gap: #{$i}px;
+  }
+  //text
+  .text-#{$i}px {
+    font-size: calc((#{$i} / 16 * 1rem));
+  }
+  //z-index
+  .z-#{$i} {
+    z-index: #{$i};
+  }
+  //size
+  .h-#{$i}px {
+    height: #{$i}px;
+  }
+  .w-#{$i}px {
+    width: #{$i}px;
+  }
+  .max-h-#{$i}px {
+    max-height: #{$i}px;
+  }
+  .max-w-#{$i}px {
+    max-width: #{$i}px;
+  }
+  .min-h-#{$i}px {
+    min-height: #{$i}px;
+  }
+  .min-w-#{$i}px {
+    min-width: #{$i}px;
+  }
+  //position
+  .top-#{$i}px {
+    top: #{$i}px;
+  }
+  .bottom-#{$i}px {
+    bottom: #{$i}px;
+  }
+  .right-#{$i}px {
+    right: #{$i}px;
+  }
+  .left-#{$i}px {
+    left: #{$i}px;
+  }
+}
+
+// input
+.label-input-base {
+  font-weight: $font-weight-bold;
+  opacity: 0.9;
+  color: $color-black;
+}
+
+input.input-base {
+  background-color: white;
+  border-radius: 10px;
+  border: 1px solid $color-text-2;
+  width: 100%;
+  padding: 9px 18px;
+  font-weight: $font-weight-normal;
+  color: $color-text-0;
+
+  ::placeholder {
+    color: $color-text-2;
+  }
+
+  &:focus {
+    box-shadow: none;
+    outline: 0;
+  }
+}
+
+.massage-input-error {
+  color: $color-status-error;
+  font-size: 0.75rem;
+}
+
+// button
+.btn-border {
+  background: $color-white;
+  border: 1px solid $color-primary-1;
+  border-radius: 20px;
+  color: $color-primary-1;
+  font-weight: $font-weight-bold;
+  font-size: 1rem;
+  padding: 6.5px 20px 7.5px 20px;
+  cursor: pointer;
+  min-width: 96px;
+  text-align: center;
+
+  .spinner-border {
+    width: 19px;
+    height: 19px;
+  }
+}
+
+.btn-fill {
+  background: $color-primary-1;
+  border: 1px solid $color-primary-1;
+  border-radius: 20px;
+  color: $color-white;
+  font-weight: $font-weight-bold;
+  font-size: 1rem;
+  padding: 6.5px 20px 7.5px 20px;
+  cursor: pointer;
+  min-width: 96px;
+  text-align: center;
+
+  .spinner-border {
+    width: 19px;
+    height: 19px;
+  }
+}

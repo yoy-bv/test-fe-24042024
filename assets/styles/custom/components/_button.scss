@@ -1,0 +1,15 @@
+@import '~/assets/styles/main/custom-variables';
+
+.btn {
+  font-weight: $font-weight-bold;
+  border-radius: 20px;
+  padding: 0.438rem 1.25rem;
+
+  &-edit {
+    color: var(--basic-color);
+  }
+
+  &-trash {
+    color: $color-status-error;
+  }
+}

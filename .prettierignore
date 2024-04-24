@@ -1,0 +1,6 @@
+node_modules
+_posts
+.next
+@types
+out
+js-coverage

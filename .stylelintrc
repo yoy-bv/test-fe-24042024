@@ -1,0 +1,28 @@
+{
+  "extends": ["stylelint-config-standard", "stylelint-config-prettier", "stylelint-config-recommended-scss"],
+  "rules": {
+    "indentation": 2,
+    "at-rule-empty-line-before": null,
+    "function-comma-space-after": null,
+    "declaration-block-no-shorthand-property-overrides": null,
+    "no-empty-source": null,
+    "no-descending-specificity": null,
+    "selector-pseudo-element-colon-notation": null,
+    "at-rule-no-unknown": null,
+    "block-opening-brace-space-before": "always",
+    "block-opening-brace-newline-after": "always",
+    "block-closing-brace-newline-before": "always",
+    "shorthand-property-no-redundant-values": null,
+    "font-family-name-quotes": null,
+    "import-notation": null,
+    "selector-class-pattern": null,
+    "font-family-no-missing-generic-family-keyword": null,
+    "scss/no-global-function-names": null,
+    "selector-pseudo-class-no-unknown": [
+      true,
+      {
+        "ignorePseudoClasses": ["global"]
+      }
+    ]
+  }
+}

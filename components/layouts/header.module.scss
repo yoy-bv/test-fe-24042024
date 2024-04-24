@@ -1,0 +1,7 @@
+@import '~/assets/styles/main/custom-variables';
+
+.headerWrapper {
+  background-color: var(--basic-color);
+  color: var(--text-in-basic-color);
+  z-index: $z-index-top-bar;
+}

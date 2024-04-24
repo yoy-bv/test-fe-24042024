@@ -1,0 +1,42 @@
+@import '~/assets/styles/main/custom-variables';
+@import '~/assets/styles/base/mixins';
+
+.dateControl {
+  position: relative;
+  width: 100%;
+
+  .input {
+    padding-right: 2.5rem;
+    border: 1px solid $color-text-2;
+
+    &::placeholder {
+      color: $color-text-2;
+    }
+
+    &:focus-visible {
+      outline: 0;
+      border-color: $color-input-active;
+      box-shadow: none;
+    }
+
+    &.error {
+      border: 1px solid $color-status-error;
+    }
+  }
+
+  .invalid {
+    input {
+      border: 1px solid $color-status-error;
+    }
+  }
+
+  .toggle {
+    position: absolute;
+    cursor: pointer;
+    top: 6px;
+    right: 10px;
+    font-size: 1.375rem;
+    user-select: none;
+    z-index: $z-index-calendar;
+  }
+}

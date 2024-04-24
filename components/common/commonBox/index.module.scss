@@ -1,0 +1,32 @@
+@import '~/assets/styles/main/custom-variables';
+
+.wrapper {
+  background: url('/images/common/background.png') no-repeat center center fixed;
+  width: 100vw;
+  min-height: 100vh;
+  background-position: top;
+  display: flex;
+  background-size: cover;
+}
+
+.boxContainer {
+  box-shadow: 14px 17px 40px 4px rgb(72 76 79 / 26%);
+  border-radius: 20px;
+}
+
+.boxWrapper {
+  padding: 20px;
+}
+
+.marginRightLogo {
+  margin-right: 10px;
+}
+
+.logo {
+  object-fit: cover;
+}
+
+.title {
+  font-size: 2rem;
+  line-height: 44px;
+}

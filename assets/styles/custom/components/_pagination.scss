@@ -1,0 +1,51 @@
+.perpage {
+  color: $color-text-1;
+  font-size: rem(16px);
+}
+
+.page-link {
+  border: 0;
+  color: $color-text-1;
+  font-size: rem(16px);
+  line-height: 1;
+  min-width: rem(32px);
+  min-height: rem(32px);
+  padding: 0;
+
+  @include border-radius(30px);
+  @include flexbox;
+  @include align-items(center);
+  @include justify-content(center);
+
+  .icon-pagination {
+    font-size: rem(12px);
+  }
+  
+  &:focus {
+    box-shadow: none;
+  }
+
+  &:hover {
+    color: $color-text-1;
+  }
+}
+
+.page-item {
+  padding-left: rem(15px);
+
+  &:last-child .page-link {
+    @include border-radius(30px);
+  }
+
+  &.disabled {
+    opacity: 0.5;
+  }
+}
+
+.pagination {
+  margin-left: rem(24px);
+}
+
+.pagination-container {
+  margin-top: rem(24px);
+}

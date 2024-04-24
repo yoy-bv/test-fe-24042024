@@ -1,0 +1,9 @@
+@import '~/assets/styles/main/custom-variables';
+
+.flatpickr-calendar {
+  &.hasTime {
+    &.noCalendar {
+      max-width: 125px;
+    }
+  }
+}

@@ -1,0 +1,63 @@
+$color-primary-0: #0e4e87;
+$color-primary-1: #005aaa;
+$color-primary-2: #3189d7;
+$color-primary-3: #5caaed;
+$color-primary-4: #c5e2fb;
+$color-primary-bg: #f5faff;
+
+$color-status-success: #28a745;
+$color-status-error: #dc3545;
+
+$color-text-0: #333;
+$color-text-1: #707070;
+$color-text-2: #b2b2b2;
+$color-text-3: #e5e5e5;
+
+$color-white: #fff;
+$color-black: #000;
+$color-a-link: #305b77;
+
+$color-input-active: #4285f4;
+
+// Font weight
+$font-weight-light: 300;
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// z-index
+$z-index-calendar: 5;
+$z-index-select-box: 6;
+$z-index-preloader: 9999;
+$z-index-top-bar: 1000;
+$z-index-second-top-bar: 999;
+$z-index-form: 2;
+$z-index-loading: 100;
+$z-index-header-table: 9;
+
+
+$input-disabled-color: $color-text-2;
+$input-disabled-bg: $color-text-3;
+$input-disabled-border-color: $color-text-2;
+$input-btn-focus-box-shadow: none;
+
+$border-color: #e5e5e5;
+$basic-color-4: rgb(var(--rgb-basic-color) / var(--bg-opacity-4));
+$basic-color-25: rgb(var(--rgb-basic-color) / var(--bg-opacity-25));
+$basic-color-50: rgb(var(--rgb-basic-color) / var(--bg-opacity-50));
+$basic-color-75: rgb(var(--rgb-basic-color) / var(--bg-opacity-75));
+
+$border-radius-sm: 0.2rem;
+$border-radius: 0.3rem;
+$border-radius-lg: 0.625rem;
+
+//Layout
+$sidebar-toggle-border-color: $color-primary-4;
+$sidebar-toggle-bg-color: $color-white;
+$sidebar-toggle-icon-color: #262626;
+$sidebar-bg-active: $basic-color-25;
+
+$input-border-radius-custom: 0.625rem;
+
+$form-width-default: 31.125rem;
