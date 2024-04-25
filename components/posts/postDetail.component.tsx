@@ -16,7 +16,7 @@ import Textarea from '../input/typing/Textarea';
 type FormComment = Comment;
 
 export default function PostDetailComponent() {
-  const [postDetail, setPostDetail] = useState<Posts[] | null>(null)
+  const [postDetail, setPostDetail] = useState<Posts | undefined>()
   const [comments, setComments] = useState<Comment[]>([])
   const router = useRouter()
   const { id } = router.query
@@ -25,6 +25,7 @@ export default function PostDetailComponent() {
     const listPosts = async () => {
       try {
         const res = await fetchDetailPost(`${id}`)
+        console.log(res.data)
         setPostDetail(res?.data)
       } catch (error) {
         console.error('Error:', error)
@@ -49,16 +50,23 @@ export default function PostDetailComponent() {
 
   const { handleSubmit, control, reset } = useForm<FormComment>();
   const onComment = (formData: FormComment) => {
-    const newComment = {
-      userId: 1,
+    const newComment: Comment = {
       id: comments.length + 1,
-      postId: postDetail?.id,
+      postId: postDetail?.id || 1,
       email: '',
       name: 'Current User Test',
       body: formData.body
     }
+
     setComments([...comments, newComment])
     reset()
+  };
+
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === 'Enter' && !event.shiftKey) {
+      event.preventDefault();
+      handleSubmit(onComment)();
+    }
   };
 
   return (
@@ -69,7 +77,7 @@ export default function PostDetailComponent() {
           <>
             <div className='mt-4 mb-4'>
               <div className='post-card'>
-                <h2>{postDetail?.title}</h2>
+                <h2>{postDetail?.title || '-'}</h2>
                 <p>{postDetail?.body}</p>
               </div>
             </div>
@@ -106,6 +114,7 @@ export default function PostDetailComponent() {
                       type="text"
                       placeholder='your text'
                       data-testid="password_input"
+                      onKeyPress={handleKeyPress}
                     />
                   </Form.Group>
                   <button type="submit" className="btn btn-primary pull-right">Comment</button>

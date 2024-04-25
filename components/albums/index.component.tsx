@@ -18,7 +18,6 @@ const AlbumComponent = () => {
     const getAlbums = async () => {
       try {
         const response = await fetchAlbums()
-        console.log({ response })
         setAlbums(response?.data);
       } catch (error) {
         console.error('Error fetching albums:', error);
@@ -88,7 +87,7 @@ const AlbumComponent = () => {
                   src={photo.thumbnailUrl}
                   width={150}
                   height={150}
-                  alt="Picture of the author"
+                  alt={photo.title}
                 />
                 <p>{photo.title}</p>
               </div>

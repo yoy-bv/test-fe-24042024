@@ -39,7 +39,6 @@ const transformResponse = (response: AxiosResponse) => {
   if (response?.data) {
     return { ...response, data: camelizeKeys(response.data) };
   }
-  console.log({ response })
   return response;
 };
 /* eslint-disable no-underscore-dangle, no-param-reassign */

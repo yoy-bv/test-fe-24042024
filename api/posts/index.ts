@@ -7,7 +7,7 @@ export function fetchPosts(limit: string) {
   return api.get(`/posts?_limit=${limit}}`);
 }
 
-export function fetchDetailPost(id: string): Promise<AxiosResponse<Posts[]>> {
+export function fetchDetailPost(id: string): Promise<AxiosResponse<Posts>> {
   return api.get(`/posts/${id}`);
 }
 

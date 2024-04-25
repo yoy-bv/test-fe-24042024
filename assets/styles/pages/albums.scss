@@ -1,20 +1,29 @@
 .album-card {
-  position: relative;
-  overflow: hidden;
-  border-radius: 15px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  transition: transform 0.3s ease;
+  .card-title {
+    font-size: 18px;
+    font-weight: bold;
+  }
+
+  .card-body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 24px;
+    font-weight: bold;
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #5fa7ff, #7bd4fe);
+    border-radius: 10px;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .card-body:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+    box-shadow: 0px 8px 12px rgba(0, 0, 0, 0.2);
+  }
 }
 
-.album-card:hover {
-  cursor: pointer;
-  transform: translateY(-5px);
-}
-
-.album-card .card-title {
-  font-size: 18px;
-  font-weight: bold;
-}
 .photo-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -58,27 +67,51 @@
 }
 
 .modal {
-  padding-left: 0;
+  padding-left: 0 !important;
+  
+  .modal-content {
+    background-color: #9ddced !important;
+  }
 }
 
 .modal-body {
   min-height: 500px;
 }
 
-@media (min-width: 768px) {
-  .photo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+.photo-grid {
+  padding: 2em;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-rows: 100px;
+  grid-gap: .5em;
+  grid-auto-rows: 100px;
+  grid-auto-flow: dense;
+  @media (max-width: 785px) {
+    padding: .5em;
+    grid-gap: .25em;
   }
-}
-
-@media (min-width: 992px) {
-  .photo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  }
-}
-
-@media (min-width: 1200px) {
-  .photo-grid {
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  .photo-item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5px;
+    &:nth-of-type(3n) {
+      grid-column: span 2;
+      @media (max-width: 400px) {
+        grid-column: span 1;
+      }
+    }
+    &:nth-of-type(4n) {
+      grid-row: span 2;
+    }
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: 5px;
+      &:hover {
+        cursor: pointer;
+      }
+    }
   }
 }

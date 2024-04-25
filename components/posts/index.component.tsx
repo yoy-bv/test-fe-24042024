@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch } from 'react-redux';
+
 import { useAppSelector } from 'redux/store';
 import { storePosts } from '@/base/redux/reducers/posts.reducer';
 import { fetchPosts } from '@/api/posts';
@@ -14,10 +15,6 @@ export default function PostsComponent() {
   const [limit, setLimit] = useState(DEFAULT_LIMIT);
   const [loading, setLoading] = useState(false);
   const [allLoaded, setAllLoaded] = useState(false)
-
-  useEffect(() => {
-    loadPosts();
-  }, []);
 
   useEffect(() => {
     loadPosts();
@@ -59,7 +56,7 @@ export default function PostsComponent() {
     <div className="posts-page">
       <h1 className="text-center mb-3">List Posts</h1>
       <div>
-        {posts?.map((post: Posts) => {
+        {Array.isArray(posts) && posts?.map((post: Posts) => {
           return <PostCard key={post.id} post={post} />;
         })}
         {loading && <Loading />}
